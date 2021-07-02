@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.sopt.soptweather.data.CityInfo
 import org.sopt.soptweather.databinding.FragmentWeatherBinding
-import org.sopt.soptweather.ui.CityListAdapter
 
 class WeatherFragment: Fragment() {
 
@@ -27,15 +25,6 @@ class WeatherFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvCityList.adapter = cityListAdapter
-        cityListAdapter.cityList.addAll(
-                listOf<CityInfo>(
-                        CityInfo(
-                                cityName = "",
-                                countryName = ""
-                        )
-                )
-        )
-        cityListAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
